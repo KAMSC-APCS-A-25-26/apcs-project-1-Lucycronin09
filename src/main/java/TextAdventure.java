@@ -28,13 +28,13 @@ class Player {
     public Player() {
         // introductory dialogue to create a new Player Character
         Scanner sc = new Scanner(System.in);
-        System.out.println("Hello there traveler, Welcome to our world. What is your name?: ");
+        System.out.println("You awake feeling startled, realizing you passed out at the bar again.");
+        System.out.println("\"Hello there traveler, Welcome to our world. What is your name?\": ");
         name = sc.nextLine();
-        System.out.println("Ahh, fine name for a fine... what are you exactly? (race): ");
+        System.out.println("\"Ahh, fine name for a fine... what are you exactly? (race)\": ");
         race = sc.next();
-        System.out.println("Just as expected. Now, what would you like to specialize in? (Rogue, Wizard, Barbarian, Druid, or Ranger)");
+        System.out.println("\"Just as expected. Now, what would you like to specialize in? (Rogue, Wizard, Barbarian, Druid, or Ranger)\":");
         dndClass = sc.next();
-        System.out.println("Great! Let's get started.");
         System.out.println();
 
 
@@ -142,13 +142,19 @@ class Enemy {
 
 public class TextAdventure {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         Player play = new Player();
         Enemy goblin = new Enemy("Goblin", 20, 3);
-        goblin.encounter();
-        goblin.attack();
-        System.out.println(play.health);
-        play.health -= goblin.enemyDamageDealt;
-        System.out.println(play.health);
+        System.out.println("\"Now that we know a little bit about my good fellow, " + play.name + " why don't we dive in and get you familiar with our world.\"");
+        System.out.println("\"Around here, we call our humble little town Langthwaite, characterized by its loooooong stretch of empty land.\"");
+        System.out.println("\"Things seem to stay rather calm around here... or at least, until right around the time you showed up.\"");
+        System.out.println("How would you like to respond?: ");
+        System.out.println("1. \"The hell you mean by that?\"");
+        System.out.println("2. \"Makes sense.\"");
+        System.out.println("3. \"Trying to accuse me of something there, buddy?\"");
+        System.out.println("4. \"I've got a knife, and I'm not afraid to use it if you keep throwing around accusations like that.\"");
+        int input = sc.nextInt();
+
     }
 }
 
